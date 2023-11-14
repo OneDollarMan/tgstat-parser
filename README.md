@@ -1,5 +1,5 @@
 Парсер сайта tgstat.ru. Парсит топ-100 каналов и чатов в каждой из 47 категорий в мультипотоке.
-Используемый стек: python, sqlalchemy, pydantic, requests, bs4, docker, postgres,
+Используемый стек: python, sqlalchemy, requests, bs4, docker, postgres
 
 
 Запуск:
