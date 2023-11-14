@@ -1,0 +1,31 @@
+services:
+  parser:
+    build: /parser
+    command: python src/main.py
+    volumes:
+      - ./parser:/app
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgresql
+      - POSTGRES_PORT=5432
+    container_name: parser_py
+    depends_on:
+      - postgresql
+
+  postgresql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: parser_db
+    volumes:
+      - postgresql_volume:/var/lib/postgresql/data/
+    restart: always
+
+volumes:
+  postgresql_volume:
