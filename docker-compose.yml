@@ -1,6 +1,6 @@
 services:
   parser:
-    build: /parser
+    build: ./parser
     command: python src/main.py
     volumes:
       - ./parser:/app
